@@ -213,30 +213,6 @@ docker run -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output \
 - Enable caching with `--cache-file` for repeated translations
 - Use smaller `--batch-size` for large documents
 
-## 🌍 Sharing Your Image
-
-### Build and Push to DockerHub
-
-```bash
-# Build with your username
-./docker-build.sh -u your-dockerhub-username -v 1.0.0 -p
-
-# Or manually
-docker build -t your-dockerhub-username/pdf-translator:1.0.0 .
-docker push your-dockerhub-username/pdf-translator:1.0.0
-```
-
-### Share with Others
-
-Others can then use:
-
-```bash
-docker pull your-dockerhub-username/pdf-translator:1.0.0
-
-docker run -v $(pwd):/app/input -v $(pwd):/app/output \
-  your-dockerhub-username/pdf-translator:1.0.0 \
-  translate /app/input/document.pdf /app/output/document-en.pdf
-```
 
 ## 🔐 Security Features
 
