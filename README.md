@@ -28,7 +28,7 @@ docker run -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output \
 
 **That's it!** Check the `output` directory for your translated PDF.
 
-## 🏗️ Build Your Own Image
+## 🏗️ Customize the Image and Tag
 
 ### Prerequisites
 
@@ -39,6 +39,9 @@ docker run -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output \
 # Pull the image
 docker pull rganeshsharma2489/pdf-translator-service-de_en_docker_deploy:1.0.0
 
+# Tag your Image for example 
+docker tag rganeshsharma2489/pdf-translator-service-de_en_docker_deploy:1.0.0 pdf-translator:latest
+
 # Create directories
 mkdir -p input output
 
@@ -47,7 +50,7 @@ cp your-german-document.pdf input/
 
 # Translate it!
 docker run -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output \
-  rganeshsharma2489/pdf-translator-service-de_en_docker_deploy:1.0.0 \
+  pdf-translator:latest \
   translate /app/input/your-german-document.pdf /app/output/english-document.pdf
 
 ```
@@ -115,7 +118,7 @@ docker run -it --rm \
   pdf-translator:latest bash
 
 # Inside the container, you can run:
-python pdf_translator.py /app/input/test.pdf /app/output/test-en.pdf --model "./models/Helsinki-NLP/opus-mt-de-en"
+python de_en-translator_v2.py /app/input/test.pdf /app/output/test-en.pdf --model "./models/Helsinki-NLP/opus-mt-de-en"
 ```
 
 ## 🔧 Docker Compose (Persistent Service)
@@ -145,7 +148,7 @@ docker-compose up -d
 
 # Translate files
 docker exec pdf-translator-service \
-  python pdf_translator.py /app/input/document.pdf /app/output/document-en.pdf --model "./models/Helsinki-NLP/opus-mt-de-en"
+  python de_en-translator_v2.py /app/input/document.pdf /app/output/document-en.pdf --model "./models/Helsinki-NLP/opus-mt-de-en"
 
 # Stop the service
 docker-compose down
