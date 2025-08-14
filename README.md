@@ -1,7 +1,6 @@
 # PDF Translation Service - Docker Edition 🐳📄
 
-[![Build Status](https://github.com/rganeshsharma/pdf-translator-service-de_en_implementation/workflows/CI/badge.svg)](https://github.com/rganeshsharma/pdf-translator-service-de_en_implementation/actions)
-[![Docker Pulls](https://img.shields.io/docker/pulls/rganeshsharma2489/pdf-translator-service-de_en_docker_deploy:1.0.0)](https://hub.docker.com/rganeshsharma2489/pdf-translator-service-de_en_docker_deploy:1.0.0)
+[![Docker Pulls](https://img.shields.io/docker/pulls/rganeshsharma2489/pdf-translator-service-de_en_docker_deploy/general)](https://hub.docker.com/repository/docker/rganeshsharma2489/pdf-translator-service-de_en_docker_deploy/general)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
@@ -261,3 +260,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 **🐳 Containerized for your convenience!**
 
 *Translate German PDFs to English with a single Docker command - no setup hassles, no dependency conflicts, just results.*
+
+**Built with ❤️ by the Ganesh Sharma**
+
+*Making document translation accessible, fast, and reliable for everyone.*

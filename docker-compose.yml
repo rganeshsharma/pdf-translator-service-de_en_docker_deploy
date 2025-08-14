@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  pdf-translator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pdf-translator:latest
+    container_name: pdf-translator-service
+    volumes:
+      # Mount current directory for input/output
+      - type: bind
+        source: ./input
+        target: /app/input
+      - type: bind
+        source: ./output
+        target: /app/output
+      # Optional: Mount cache directory for faster repeated translations
+      - type: bind
+        source: ./cache
+        target: /app/cache
+        read_only: false
+    environment:
+      - MODEL_PATH=/app/models/Helsinki-NLP/opus-mt-de-en
+      - PYTHONPATH=/app
+      - OFFLINE_MODE=true
+    # Keep container running for interactive use
+    command: tail -f /dev/null
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "simple_test.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 2G
+          cpus: '0.5'
+    # Security
+    user: "1000:1000"
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/temp
+
+  # Optional: Web interface service (future enhancement)
+  pdf-translator-web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    image: pdf-translator-web:latest
+    container_name: pdf-translator-web
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: ./input
+        target: /app/input
+      - type: bind
+        source: ./output
+        target: /app/output
+    depends_on:
+      - pdf-translator
+    environment:
+      - TRANSLATOR_SERVICE=pdf-translator
+    profiles:
+      - web  # Only start with --profile web
+    restart: unless-stopped
+
+volumes:
+  cache_data:
+    driver: local
+
+networks:
+  pdf-translator-network:
+    driver: bridge
