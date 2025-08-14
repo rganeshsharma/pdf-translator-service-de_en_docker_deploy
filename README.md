@@ -8,7 +8,7 @@ A standalone Docker container for translating German PDF documents to English wh
 
 ## 🚀 Quick Start (Ready-to-Use Image)
 
-If someone has already built and shared the image on DockerHub:
+Download the image from DockerHub:
 
 ```bash
 # Pull the pre-built image
@@ -115,7 +115,7 @@ docker run -it --rm \
   pdf-translator:latest bash
 
 # Inside the container, you can run:
-python pdf_translator.py /app/input/test.pdf /app/output/test-en.pdf --offline
+python pdf_translator.py /app/input/test.pdf /app/output/test-en.pdf --model "./models/Helsinki-NLP/opus-mt-de-en"
 ```
 
 ## 🔧 Docker Compose (Persistent Service)
@@ -145,7 +145,7 @@ docker-compose up -d
 
 # Translate files
 docker exec pdf-translator-service \
-  python pdf_translator.py /app/input/document.pdf /app/output/document-en.pdf --offline
+  python pdf_translator.py /app/input/document.pdf /app/output/document-en.pdf --model "./models/Helsinki-NLP/opus-mt-de-en"
 
 # Stop the service
 docker-compose down
