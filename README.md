@@ -1,6 +1,6 @@
 # PDF Translation Service - Docker Edition 🐳📄
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/rganeshsharma2489/pdf-translator-service-de_en_docker_deploy/general)](https://hub.docker.com/repository/docker/rganeshsharma2489/pdf-translator-service-de_en_docker_deploy/general)
+[![Docker Pulls](https://img.shields.io/docker/pulls/rganeshsharma2489/pdf-translator-service-de_en_docker_deploy)](https://hub.docker.com/repository/docker/rganeshsharma2489/pdf-translator-service-de_en_docker_deploy)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
