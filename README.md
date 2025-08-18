@@ -254,8 +254,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Support
 
-- **GitHub Issues**: [Report bugs](https://github.com/yourusername/pdf-translation-service/issues)
-- **Docker Hub**: [View image](https://hub.docker.com/r/yourusername/pdf-translator)
+- **GitHub Issues**: [Report bugs](https://github.com/pdf-translator-service-de_en_docker_deploy/issues) - **Docker Hub**: [View image](https://hub.docker.com/repository/docker/rganeshsharma2489/pdf-translator-service-de_en_docker_deplo)
 - **Documentation**: [Full docs](./DOCKER_README.md)
 
 ---
