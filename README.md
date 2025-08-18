@@ -258,7 +258,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **Documentation**: [Full docs](./DOCKER_README.md)
 
 ---
-
+ 
 **🐳 Containerized for your convenience!**
 
 *Translate German PDFs to English with a single Docker command - no setup hassles, no dependency conflicts, just results.*
