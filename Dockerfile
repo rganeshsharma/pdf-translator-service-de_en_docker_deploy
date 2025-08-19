@@ -16,7 +16,6 @@ RUN apt-get update && apt-get install -y \
     # For fonts and text processing
     fonts-liberation \
     fonts-dejavu-core \
-    # Utilities
     curl \
     && rm -rf /var/lib/apt/lists/*
 
